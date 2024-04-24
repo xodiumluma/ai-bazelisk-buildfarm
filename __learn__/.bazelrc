@@ -1,0 +1,28 @@
+build --java_language_version=17
+build --java_runtime_version=remotejdk_17
+
+build --tool_java_language_version=17
+build --tool_java_runtime_version=remotejdk_17
+
+common --enable_platform_specific_config
+
+build:fuse --define=fuse=true
+
+# https://github.com/bazelbuild/bazel/issues/3236 - workaround
+build:linux --sandbox_tmpfs_path=/tmp
+
+build --nojava_header_compilation
+
+test --nojava_header_compilation
+test --enable_runfiles
+test --test_tag_filters=-redis,-integration
+
+# https://buildkite.com/bazel/bazelisk-plus-incompatible-flags - check that buildfarm can work with new versions of bazel
+common --incompatible_disallow_empty_glob
+
+common --enable_bzlmod
+
+# https://bazelbuild/external/lockfile
+common --lockfile_mode=off
+# For mac/win/linux devs who don't have access to all three to update platform-specific bits of lockfile 
+
