@@ -1,0 +1,10 @@
+"""Buildfarm build and test"""
+
+module(
+  name = "build_buildfarm",
+  repo_name = "build_buildfarm",
+)
+
+bazel_dep(name = "bazel_skylib", version = "1.5.0")
+bazel_dep(name = "blake3", version = "1.3.3.bcr.1")
+bazel_dep(name = "buildifier_prebuilt", version = "6.4.0")
