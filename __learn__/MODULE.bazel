@@ -21,3 +21,21 @@ bazel_dep(name = "rules_license", version = "0.0.7")
 bazel_dep(name = "rules_oci", version = "1.7.4")
 bazel_dep(name = "rules_pkg", version = "0.10.1")
 bazel_dep(name = "rules_proto", version = "6.0.0-rc2")
+
+# Deps for tests
+bazel_dep(
+  name = "container_structure_test",
+  version = "1.16.0",
+  dev_dependency = True,
+)
+
+# @todo remove after https://github.com/bazelbuild/remote-apis/pull/293 is merged
+bazel_dep(name = "remoteapis", version = "<version>")
+archive_override(
+  module_name = "remoteapis",
+  integrity = "<integrity>",
+  strip_prefix = "<strip_prefix>",
+  urls = [
+    "<zip url>",
+  ],
+)
