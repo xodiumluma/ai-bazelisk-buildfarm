@@ -41,6 +41,7 @@ archive_override(
 )
 
 IO_NETTY_MODULES = [
+  # alphabetical
   "buffer",
   "codec",
   "codec-http",
@@ -56,4 +57,25 @@ IO_NETTY_MODULES = [
   "transport-native-epoll",
   "transport-native-kqueue",
   "transport-native-unix-common",
+]
+
+IO_GRPC_MODULES = [
+  # alphabetical
+  "api",
+  "auth",
+  "context",
+  "core",
+  "netty",
+  "netty-shaded",
+  "protobuf",
+  "services",
+  "stub",
+  "testing",
+]
+
+CORE_AWS_MODULES = [
+  # alphabetical
+  "core",
+  "s3",
+  "secretsmanager",
 ]
