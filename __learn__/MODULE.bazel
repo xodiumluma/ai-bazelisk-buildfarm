@@ -39,3 +39,21 @@ archive_override(
     "<zip url>",
   ],
 )
+
+IO_NETTY_MODULES = [
+  "buffer",
+  "codec",
+  "codec-http",
+  "codec-http2",
+  "codec-socks",
+  "common",
+  "handler",
+  "handler-proxy",
+  "resolver",
+  "transport",
+  "transport-classes-epoll",
+  "transport-classes-kqueue",
+  "transport-native-epoll",
+  "transport-native-kqueue",
+  "transport-native-unix-common",
+]
